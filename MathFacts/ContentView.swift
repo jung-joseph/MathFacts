@@ -33,6 +33,8 @@ struct ContentView: View {
                 VStack{
                     
                     HStack{
+
+                        RightWrongView(rightWrong: $rightWrong)
                         Spacer()
                         Text("Score: \(score) / \(numProblems)")
                             .font(.largeTitle)
@@ -40,50 +42,14 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                     }
                     
-                    HStack{
-                        Text("\(mathModel.number1)").font(.largeTitle)
-                        Text(" + ").font(.largeTitle)
-                        Text("\(mathModel.number2)").font(.largeTitle)
-                        Text(" = ").font(.largeTitle)
-                        //                    Text("\(mathModel.number3)").font(.largeTitle)
-                        Text("\(answerDisplay)").font(.largeTitle)
-                    }.background(Color.white).padding().cornerRadius(10).shadow(radius: 10)
+                    AdditionProblem(mathModel: mathModel, answerDisplay: $answerDisplay)
                     
                     
-                    if rightWrong == "Right!" {
-                        Text("\(rightWrong)").foregroundColor(Color.green).font(.largeTitle)
-                    } else {
-                        Text("\(rightWrong)").foregroundColor(Color.red).font(.largeTitle)
-                        
-                    }
-                    
-                    TextField("Answer", text: $mathModel.answerText)
-                        .textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40))
+                    TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40))
                         .keyboardType(.numberPad)
                     
-                    Button (action: {
-                        let answerTemp = Int(self.mathModel.answerText)
-                        if answerTemp == self.mathModel.number3 {
-                            print("Right")
-                            self.rightWrong = "Right!"
-                            self.answerDisplay = String(self.mathModel.number3)
-                            if self.newProblem {
-                                self.score += 1
-                            }
-                            
-                        } else {
-                            print("Sorry")
-                            self.rightWrong = "Sorry!"
-                            self.answerDisplay = String(self.mathModel.number3)
-                            
-                        }
-                        self.newProblem = false
-                    }){Text("Enter Answer")}
-                        .background(Color.red)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                        .font(.largeTitle)
+                    AnswerButton(mathModel: mathModel, answerDisplay: $answerDisplay, rightWrong: $rightWrong, newProblem: $newProblem, score: $score)
+
                     
                     Text("Double Tap For A New Problem")
                         .font(.title)
