@@ -43,7 +43,7 @@ struct ContentView: View {
                     }
                     
                     AdditionProblem(mathModel: mathModel, answerDisplay: $answerDisplay)
-                    
+
                     
                     TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40))
                         .keyboardType(.numberPad)
@@ -51,8 +51,8 @@ struct ContentView: View {
                     AnswerButton(mathModel: mathModel, answerDisplay: $answerDisplay, rightWrong: $rightWrong, newProblem: $newProblem, score: $score)
 
                     
-                    Text("Double Tap For A New Problem")
-                        .font(.title)
+                    Text("Double Tap For Next Problem")
+                        .font(.body)
                         .foregroundColor(Color.white)
                         .lineLimit(nil)
                         .multilineTextAlignment(.center)
