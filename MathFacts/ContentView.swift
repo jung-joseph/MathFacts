@@ -9,7 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var userSettings = UserSettings()
     @ObservedObject var mathModel = MathModel()
+//    mathModel = MathModel(userSettings: userSettings)
+
     @State private var rightWrong: String = ""
     @State private var answerDisplay: String = "??"
     @State private var score: Int = 0
@@ -18,11 +21,12 @@ struct ContentView: View {
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+        mathModel.initialize(userSettings: userSettings)
     }
     
     var body: some View {
         
-        
+
         NavigationView{
             ZStack{
                 //Define the screen Color
@@ -45,13 +49,13 @@ struct ContentView: View {
                     AdditionProblemView(mathModel: mathModel, answerDisplay: $answerDisplay)
 
                     
-                    TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40))
+                    TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40)).foregroundColor(Color.red)
                         .keyboardType(.numberPad)
                     
                     AnswerButton(mathModel: mathModel, answerDisplay: $answerDisplay, rightWrong: $rightWrong, newProblem: $newProblem, score: $score)
 
                     
-                    Text("Double Tap For Next Problem")
+                    Text("Double Tap Anywhere For the Next Problem")
                         .font(.body)
                         .foregroundColor(Color.white)
                         .lineLimit(nil)
@@ -64,7 +68,7 @@ struct ContentView: View {
                 }// VStack
 
             } // ZStack
-                .navigationBarItems(trailing: SettingsButton(destination: UserSettingsView(userSettings: UserSettings()) )).foregroundColor(Color.white)
+                .navigationBarItems(trailing: SettingsButton(destination: UserSettingsView(userSettings: userSettings))).foregroundColor(Color.white)
 //                .navigationBarItems(trailing:EditButton())
 
                 .navigationBarTitle("MathFacts!")
@@ -72,7 +76,7 @@ struct ContentView: View {
         }// NavigationView
             .onTapGesture(count: 2){
                 print("Tapped!")
-                self.mathModel.addition()
+                self.mathModel.addition(userSettings: self.userSettings)
                 self.answerDisplay = "??"
                 self.mathModel.answerText = ""
                 self.newProblem = true

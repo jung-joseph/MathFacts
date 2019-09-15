@@ -10,7 +10,7 @@ import Foundation
 
 class UserSettings: ObservableObject {
     
-    var AddMinNumber: Int = 0
-    var AddMaxNumber: Int = 10
+    @Published var addMinNumber: Double = 0
+    @Published var addMaxNumber: Double = 10
     
 }
