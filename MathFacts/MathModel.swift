@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
 class MathModel: ObservableObject {
     @Published var number1: Int = 0
@@ -14,6 +16,13 @@ class MathModel: ObservableObject {
     @Published var number3: Int = 0
     @Published var answerText: String = ""
     @Published var problemType: String = "Addition"
+
+//    let objectWillChange = PassthroughSubject<Void,Never>()
+//    var problemType: String = "Addition" {
+//        willSet {
+//            objectWillChange.send()
+//        }
+//    }
 
     
     func initialize(userSettings: UserSettings){
@@ -32,9 +41,17 @@ class MathModel: ObservableObject {
             number3 = number1 - number2
             
         } else if problemType == "Multiplication" {
-            
+            number1 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+             number2 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+             number3 = number1 + number2
         } else if problemType == "Division" {
+            number1 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+            number2 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+            number3 = number1 * number2
             
+            let temp = number3
+            number3 = number1
+            number1 = temp
         } else {
             problemType = "Addition"
             number1 = 0
@@ -59,5 +76,24 @@ class MathModel: ObservableObject {
         }
         number3 = number1 - number2
     }
+    func multiplication(userSettings: UserSettings) {
+        number1 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+        number2 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+        number3 = number1 * number2
+    }
+    func division(userSettings: UserSettings) {
+        number1 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+        number2 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
+        number3 = number1 * number2
+        // number3 = quotient
+        //number2 = divisor
+        if number2 == 0 {
+            number2 = 1
+        }
+        let temp = number3
+        number3 = number1
+        number1 = temp
+    }
+    
     
 }

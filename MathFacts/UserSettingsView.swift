@@ -21,34 +21,21 @@ struct UserSettingsView: View {
         
         NavigationView {
             VStack{
-//                Text("User Settings").font(.largeTitle).foregroundColor(Color.black)
-                Text("Addition Problems").foregroundColor(Color.black)
-                HStack{
-                    Text("min value").foregroundColor(Color.black)
-                    Spacer()
-                }
-                HStack{
-                    Text(String(format: "%.0f", min)).foregroundColor(Color.black)
-                    Slider(value: $userSettings.addMinNumber, in: min...max, step: 5 )
-                    Text(String(format: "%.0f", max)).foregroundColor(Color.black)
-
-                }
-                Text("\(userSettings.addMinNumber)").foregroundColor(Color.black)
-//                Spacer()
-                HStack{
-                    Text("max value").foregroundColor(Color.black)
-                    Spacer()
-                }
-                HStack{
-                    Text(String(format: "%.0f", min)).foregroundColor(Color.black)
-                    Slider(value: $userSettings.addMaxNumber, in: min...max, step: 5 )
-                    Text(String(format: "%.0f", max)).foregroundColor(Color.black)
-
-                }
-                Text("\(userSettings.addMaxNumber)").foregroundColor(Color.black)
                 Spacer()
+                AddSettingsView(userSettings: userSettings, min: min, max: max)
+                
+                SubSettingsView(userSettings: userSettings, min: min, max: max)
+                
+                MulSettingsView(userSettings: userSettings, min: min, max: max)
+                
+                DivSettingsView(userSettings: userSettings, min: min, max: max)
+                
+                Spacer()
+
+
             }
-        .navigationBarTitle(Text("User Settings"))
+//        .navigationBarTitle(Text("User Settings"))
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

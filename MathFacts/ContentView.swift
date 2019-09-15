@@ -39,7 +39,7 @@ struct ContentView: View {
                     Picker("", selection: self.$mathModel.problemType ) {
                         Text("Addition").tag("Addition").font(.custom("Arial", size: 20))
                         Text("Subtraction").tag("Subtraction").font(.custom("Arial", size: 20))
-                        Text("Multiplication").tag("Multiplicaton").font(.custom("Arial", size: 20))
+                        Text("Multiplication").tag("Multiplication").font(.custom("Arial", size: 20))
                         Text("Division").tag("Division").font(.custom("Arial", size: 20))
                     }.pickerStyle(SegmentedPickerStyle())
                     .foregroundColor(Color.white)
@@ -62,7 +62,7 @@ struct ContentView: View {
 
                     
                     TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40)).foregroundColor(Color.red)
-                        .keyboardType(.numberPad)
+                        .keyboardType(.numbersAndPunctuation)
                     
                     AnswerButton(mathModel: mathModel, answerDisplay: $answerDisplay, rightWrong: $rightWrong, newProblem: $newProblem, score: $score)
 
@@ -92,11 +92,11 @@ struct ContentView: View {
                 } else if self.mathModel.problemType == "Subtraction" {
                     self.mathModel.subtraction(userSettings: self.userSettings)
                 } else if self.mathModel.problemType == "Multiplication" {
-                    
+                    self.mathModel.multiplication(userSettings: self.userSettings)
                 } else if self.mathModel.problemType == "Division" {
-                    
+                    self.mathModel.division(userSettings: self.userSettings)
                 } else {
-                
+                    fatalError("Fatal Error")
                 }
         
                 self.answerDisplay = "??"
