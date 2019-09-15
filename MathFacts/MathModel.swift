@@ -18,14 +18,14 @@ class MathModel: ObservableObject {
     var num2Min: Int = 0
     var num2Max: Int = 0
     
-    init(num1Min:Int, num1Max: Int, num2Min: Int, num2Max: Int){
-        self.num1Min = num1Min
-        self.num1Max = num1Max
-        self.num2Min = num2Min
-        self.num2Max = num2Max
+//    init(num1Min:Int, num1Max: Int, num2Min: Int, num2Max: Int){
+//        self.num1Min = num1Min
+//        self.num1Max = num1Max
+//        self.num2Min = num2Min
+//        self.num2Max = num2Max
+//
+//    }
 
-    }
-    
     func addition(){
         number1 = Int.random(in: self.num1Min...self.num1Max + 1)
         number2 = Int.random(in: self.num2Min...self.num2Max + 1)

@@ -42,6 +42,6 @@ struct AnswerButton: View {
 
 struct AnswerButton_Previews: PreviewProvider {
     static var previews: some View {
-        AnswerButton(mathModel: MathModel(num1Min: 0, num1Max: 0, num2Min: 0, num2Max: 0), answerDisplay: .constant("0"), rightWrong: .constant("0"), newProblem: .constant(true), score: .constant(0))
+        AnswerButton(mathModel: MathModel(), answerDisplay: .constant("0"), rightWrong: .constant("0"), newProblem: .constant(true), score: .constant(0))
     }
 }

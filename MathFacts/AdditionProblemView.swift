@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AdditionProblem: View {
+struct AdditionProblemView: View {
     @ObservedObject var mathModel: MathModel
     @Binding var answerDisplay: String
     var body: some View {
@@ -23,8 +23,8 @@ struct AdditionProblem: View {
     }
 }
 
-struct AdditionProblem_Previews: PreviewProvider {
+struct AdditionProblemView_Previews: PreviewProvider {
     static var previews: some View {
-        AdditionProblem(mathModel: MathModel(num1Min: 0, num1Max: 0, num2Min: 0, num2Max: 0), answerDisplay: .constant("0"))
+        AdditionProblemView(mathModel: MathModel(), answerDisplay: .constant("0"))
     }
 }

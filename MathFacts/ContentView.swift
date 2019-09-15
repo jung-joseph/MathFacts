@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var mathModel = MathModel(num1Min: 0, num1Max: 10, num2Min: 0, num2Max: 10)
+    @ObservedObject var mathModel = MathModel()
     @State private var rightWrong: String = ""
     @State private var answerDisplay: String = "??"
     @State private var score: Int = 0
@@ -42,7 +42,7 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                     }
                     
-                    AdditionProblem(mathModel: mathModel, answerDisplay: $answerDisplay)
+                    AdditionProblemView(mathModel: mathModel, answerDisplay: $answerDisplay)
 
                     
                     TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40))
@@ -62,7 +62,11 @@ struct ContentView: View {
                     
                     
                 }// VStack
+
             } // ZStack
+                .navigationBarItems(trailing: SettingsButton(destination: UserSettingsView(userSettings: UserSettings()) )).foregroundColor(Color.white)
+//                .navigationBarItems(trailing:EditButton())
+
                 .navigationBarTitle("MathFacts!")
             
         }// NavigationView
@@ -80,6 +84,13 @@ struct ContentView: View {
     }
 }// ContentView
 
+struct SettingsButton<Destination : View>: View {
+    var destination: Destination
+    
+    var body: some View {
+        NavigationLink(destination: self.destination){Text("⚙︎").font(.largeTitle)}
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

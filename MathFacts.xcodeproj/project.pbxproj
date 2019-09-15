@@ -13,10 +13,12 @@
 		53227D86232AB9510057E162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53227D85232AB9510057E162 /* Assets.xcassets */; };
 		53227D89232AB9510057E162 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53227D88232AB9510057E162 /* Preview Assets.xcassets */; };
 		53227D8C232AB9510057E162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53227D8A232AB9510057E162 /* LaunchScreen.storyboard */; };
-		53227D94232AB9A40057E162 /* AdditionProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53227D93232AB9A40057E162 /* AdditionProblem.swift */; };
+		53227D94232AB9A40057E162 /* AdditionProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53227D93232AB9A40057E162 /* AdditionProblemView.swift */; };
 		53227D96232AB9D90057E162 /* MathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53227D95232AB9D90057E162 /* MathModel.swift */; };
 		533735B7232C1DFD005BBE25 /* RightWrongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533735B6232C1DFD005BBE25 /* RightWrongView.swift */; };
 		533735B9232C1FD4005BBE25 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533735B8232C1FD4005BBE25 /* AnswerButton.swift */; };
+		53B999A8232E7629005899AC /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B999A7232E7629005899AC /* UserSettingsView.swift */; };
+		53B999AA232E7674005899AC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B999A9232E7674005899AC /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +30,12 @@
 		53227D88232AB9510057E162 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53227D8B232AB9510057E162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53227D8D232AB9510057E162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53227D93232AB9A40057E162 /* AdditionProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionProblem.swift; sourceTree = "<group>"; };
+		53227D93232AB9A40057E162 /* AdditionProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionProblemView.swift; sourceTree = "<group>"; };
 		53227D95232AB9D90057E162 /* MathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathModel.swift; sourceTree = "<group>"; };
 		533735B6232C1DFD005BBE25 /* RightWrongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightWrongView.swift; sourceTree = "<group>"; };
 		533735B8232C1FD4005BBE25 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
+		53B999A7232E7629005899AC /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
+		53B999A9232E7674005899AC /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +72,10 @@
 				53227D81232AB94F0057E162 /* SceneDelegate.swift */,
 				53227D83232AB94F0057E162 /* ContentView.swift */,
 				53227D95232AB9D90057E162 /* MathModel.swift */,
-				53227D93232AB9A40057E162 /* AdditionProblem.swift */,
+				53227D93232AB9A40057E162 /* AdditionProblemView.swift */,
 				533735B6232C1DFD005BBE25 /* RightWrongView.swift */,
+				53B999A7232E7629005899AC /* UserSettingsView.swift */,
+				53B999A9232E7674005899AC /* UserSettings.swift */,
 				533735B8232C1FD4005BBE25 /* AnswerButton.swift */,
 				53227D85232AB9510057E162 /* Assets.xcassets */,
 				53227D8A232AB9510057E162 /* LaunchScreen.storyboard */,
@@ -159,8 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				53227D80232AB94F0057E162 /* AppDelegate.swift in Sources */,
+				53B999A8232E7629005899AC /* UserSettingsView.swift in Sources */,
 				533735B7232C1DFD005BBE25 /* RightWrongView.swift in Sources */,
-				53227D94232AB9A40057E162 /* AdditionProblem.swift in Sources */,
+				53227D94232AB9A40057E162 /* AdditionProblemView.swift in Sources */,
+				53B999AA232E7674005899AC /* UserSettings.swift in Sources */,
 				53227D96232AB9D90057E162 /* MathModel.swift in Sources */,
 				533735B9232C1FD4005BBE25 /* AnswerButton.swift in Sources */,
 				53227D82232AB94F0057E162 /* SceneDelegate.swift in Sources */,
