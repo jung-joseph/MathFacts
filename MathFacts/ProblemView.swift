@@ -1,5 +1,5 @@
 //
-//  AdditionProblem.swift
+//  Problem.swift
 //  MathFacts
 //
 //  Created by Joseph Jung on 9/12/19.
@@ -8,13 +8,21 @@
 
 import SwiftUI
 
-struct AdditionProblemView: View {
+struct ProblemView: View {
     @ObservedObject var mathModel: MathModel
     @Binding var answerDisplay: String
     var body: some View {
         HStack{
             Text("\(mathModel.number1)").font(.largeTitle).foregroundColor(Color.white)
-            Text(" + ").font(.largeTitle).foregroundColor(Color.white)
+            if mathModel.problemType == "Addition" {
+                Text(" + ").font(.largeTitle).foregroundColor(Color.white)
+            } else if mathModel.problemType == "Subtraction" {
+                Text(" - ").font(.largeTitle).foregroundColor(Color.white)
+            } else if mathModel.problemType == "Multiplication" {
+                Text(" X ").font(.largeTitle).foregroundColor(Color.white)
+            } else if mathModel.problemType == "Division" {
+                Text(" / ").font(.largeTitle).foregroundColor(Color.white)
+            }
             Text("\(mathModel.number2)").font(.largeTitle).foregroundColor(Color.white)
             Text(" = ").font(.largeTitle).foregroundColor(Color.white)
             //                    Text("\(mathModel.number3)").font(.largeTitle)
@@ -23,8 +31,8 @@ struct AdditionProblemView: View {
     }
 }
 
-struct AdditionProblemView_Previews: PreviewProvider {
+struct ProblemView_Previews: PreviewProvider {
     static var previews: some View {
-        AdditionProblemView(mathModel: MathModel(), answerDisplay: .constant("0"))
+        ProblemView(mathModel: MathModel(), answerDisplay: .constant("0"))
     }
 }

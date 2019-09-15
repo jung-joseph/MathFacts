@@ -36,6 +36,18 @@ struct ContentView: View {
                 
                 VStack{
                     
+                    Picker("", selection: self.$mathModel.problemType ) {
+                        Text("Addition").tag("Addition").font(.custom("Arial", size: 20))
+                        Text("Subtraction").tag("Subtraction").font(.custom("Arial", size: 20))
+                        Text("Multiplication").tag("Multiplicaton").font(.custom("Arial", size: 20))
+                        Text("Division").tag("Division").font(.custom("Arial", size: 20))
+                    }.pickerStyle(SegmentedPickerStyle())
+                    .foregroundColor(Color.white)
+                    .background(Color.red)
+                    .cornerRadius(10)
+                    .shadow(radius: 10)
+                    
+                    
                     HStack{
 
                         RightWrongView(rightWrong: $rightWrong)
@@ -46,7 +58,7 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                     }
                     
-                    AdditionProblemView(mathModel: mathModel, answerDisplay: $answerDisplay)
+                    ProblemView(mathModel: mathModel, answerDisplay: $answerDisplay)
 
                     
                     TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40)).foregroundColor(Color.red)
@@ -69,14 +81,24 @@ struct ContentView: View {
 
             } // ZStack
                 .navigationBarItems(trailing: SettingsButton(destination: UserSettingsView(userSettings: userSettings))).foregroundColor(Color.white)
-//                .navigationBarItems(trailing:EditButton())
 
                 .navigationBarTitle("MathFacts!")
             
         }// NavigationView
             .onTapGesture(count: 2){
                 print("Tapped!")
-                self.mathModel.addition(userSettings: self.userSettings)
+                if self.mathModel.problemType == "Addition" {
+                    self.mathModel.addition(userSettings: self.userSettings)
+                } else if self.mathModel.problemType == "Subtraction" {
+                    self.mathModel.subtraction(userSettings: self.userSettings)
+                } else if self.mathModel.problemType == "Multiplication" {
+                    
+                } else if self.mathModel.problemType == "Division" {
+                    
+                } else {
+                
+                }
+        
                 self.answerDisplay = "??"
                 self.mathModel.answerText = ""
                 self.newProblem = true
