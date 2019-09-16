@@ -15,27 +15,27 @@ struct SubSettingsView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Subtraction min value").foregroundColor(Color.black)
+                Text("Subtraction min value").foregroundColor(Color.green)
+                Text("\(Int(userSettings.subMinNumber))").foregroundColor(Color.green)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.green)
                 Slider(value: $userSettings.subMinNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.green)
 
             }
-            Text("\(userSettings.subMinNumber)").foregroundColor(Color.black)
             HStack{
-                Text("Subtraction max value").foregroundColor(Color.black)
+                Text("Subtraction max value").foregroundColor(Color.green)
+                Text("\(Int(userSettings.subMaxNumber))").foregroundColor(Color.green)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.green)
                 Slider(value: $userSettings.subMaxNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.green)
 
             }
-            Text("\(userSettings.subMaxNumber)").foregroundColor(Color.black)
             
             
         }

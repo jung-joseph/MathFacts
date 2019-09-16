@@ -15,27 +15,27 @@ struct MulSettingsView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Multiplication min value").foregroundColor(Color.black)
+                Text("Multiplication min value").foregroundColor(Color.yellow)
+                Text("\(Int(userSettings.mulMinNumber))").foregroundColor(Color.yellow)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.yellow)
                 Slider(value: $userSettings.mulMinNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.yellow)
                 
             }
-            Text("\(userSettings.mulMinNumber)").foregroundColor(Color.black)
             HStack{
-                Text("Multipication max value").foregroundColor(Color.black)
+                Text("Multipication max value").foregroundColor(Color.yellow)
+                Text("\(Int(userSettings.mulMaxNumber))").foregroundColor(Color.yellow)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.yellow)
                 Slider(value: $userSettings.mulMaxNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.yellow)
                 
             }
-            Text("\(userSettings.mulMaxNumber)").foregroundColor(Color.black)
             
             
         }

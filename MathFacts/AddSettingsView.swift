@@ -16,27 +16,27 @@ struct AddSettingsView: View {
     var body: some View {
         VStack {
             HStack{
-                Text("Addition min value").foregroundColor(Color.black)
+                Text("Addition min value").foregroundColor(Color.red)
+                Text("\(Int(userSettings.addMinNumber))").foregroundColor(Color.red)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.red)
                 Slider(value: $userSettings.addMinNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.red)
 
             }
-            Text("\(userSettings.addMinNumber)").foregroundColor(Color.black)
             HStack{
-                Text("Addition max value").foregroundColor(Color.black)
+                Text("Addition max value").foregroundColor(Color.red)
+                Text("\(Int(userSettings.addMaxNumber))").foregroundColor(Color.red)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.red)
                 Slider(value: $userSettings.addMaxNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.red)
 
             }
-            Text("\(userSettings.addMaxNumber)").foregroundColor(Color.black)
         }
 
     }

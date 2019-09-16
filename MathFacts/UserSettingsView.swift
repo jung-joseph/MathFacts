@@ -18,7 +18,7 @@ struct UserSettingsView: View {
     
     var body: some View {
         
-        NavigationView {
+//        NavigationView {
             VStack{
                 Spacer()
                 AddSettingsView(userSettings: userSettings, min: min, max: max)
@@ -37,7 +37,7 @@ struct UserSettingsView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
             
-        }
+//        }
     }
 }
 #if DEBUG

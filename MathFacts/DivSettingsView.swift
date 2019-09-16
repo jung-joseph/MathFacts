@@ -15,27 +15,27 @@ struct DivSettingsView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Division min value").foregroundColor(Color.black)
+                Text("Division min value").foregroundColor(Color.purple)
+                Text("\(Int(userSettings.divMinNumber))").foregroundColor(Color.purple)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.purple)
                 Slider(value: $userSettings.divMinNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.purple)
                 
             }
-            Text("\(userSettings.divMinNumber)").foregroundColor(Color.black)
             HStack{
-                Text("Division max value").foregroundColor(Color.black)
+                Text("Division max value").foregroundColor(Color.purple)
+                Text("\(Int(userSettings.divMaxNumber))").foregroundColor(Color.purple)
                 Spacer()
             }
             HStack{
-                Text(String(format: "%.0f", min)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", min)).foregroundColor(Color.purple)
                 Slider(value: $userSettings.divMaxNumber, in: min...max, step: 5 )
-                Text(String(format: "%.0f", max)).foregroundColor(Color.black)
+                Text(String(format: "%.0f", max)).foregroundColor(Color.purple)
                 
             }
-            Text("\(userSettings.divMaxNumber)").foregroundColor(Color.black)
             Spacer()
             
             
