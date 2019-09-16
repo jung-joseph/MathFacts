@@ -35,17 +35,61 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack{
-                    
-                    Picker("", selection: self.$mathModel.problemType ) {
-                        Text("Addition").tag("Addition").font(.custom("Arial", size: 20))
-                        Text("Subtraction").tag("Subtraction").font(.custom("Arial", size: 20))
-                        Text("Multiplication").tag("Multiplication").font(.custom("Arial", size: 20))
-                        Text("Division").tag("Division").font(.custom("Arial", size: 20))
-                    }.pickerStyle(SegmentedPickerStyle())
-                    .foregroundColor(Color.white)
-                    .background(Color.red)
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
+                    HStack{
+                        Button (action: {
+                            self.mathModel.problemType = "Addition"
+                            self.mathModel.initialize(userSettings: self.userSettings)
+                            self.answerDisplay = "??"
+                            self.mathModel.answerText = ""
+
+                        }){Text("Addition")}
+                            .background(Color.red)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 10)
+                            .font(.custom("Arial", size: 20))
+                        Button (action: {
+                            self.mathModel.problemType = "Subtraction"
+                            self.mathModel.initialize(userSettings: self.userSettings)
+                            self.answerDisplay = "??"
+                            self.mathModel.answerText = ""
+
+
+                        }){Text("Subtraction")}
+                            .background(Color.red)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 10)
+                            .font(.custom("Arial", size: 20))
+                        Button (action: {
+                            self.mathModel.problemType = "Multiplication"
+                            self.mathModel.initialize(userSettings: self.userSettings)
+                            self.answerDisplay = "??"
+                            self.mathModel.answerText = ""
+
+
+                        }){Text("Multiplication")}
+                            .background(Color.red)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 10)
+                            .font(.custom("Arial", size: 20))
+                        Button (action: {
+                            self.mathModel.problemType = "Division"
+                            self.mathModel.initialize(userSettings: self.userSettings)
+                            self.answerDisplay = "??"
+                            self.mathModel.answerText = ""
+
+
+                        }){Text("Division")}
+                            .background(Color.red)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 10)
+                            .font(.custom("Arial", size: 20))
+                        
+                    }
+
                     
                     
                     HStack{

@@ -27,7 +27,7 @@ struct ProblemView: View {
             Text(" = ").font(.largeTitle).foregroundColor(Color.white)
             //                    Text("\(mathModel.number3)").font(.largeTitle)
             Text("\(answerDisplay)").font(.largeTitle).foregroundColor(Color.red)
-        }.background(Color.blue).padding().cornerRadius(10).shadow(radius: 10)
+        }.background(Color.blue).padding().cornerRadius(20).shadow(radius: 20)
     }
 }
 

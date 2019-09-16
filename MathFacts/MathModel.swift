@@ -20,7 +20,10 @@ class MathModel: ObservableObject {
 //    let objectWillChange = PassthroughSubject<Void,Never>()
 //    var problemType: String = "Addition" {
 //        willSet {
+//            print("\(problemType)  before")
 //            objectWillChange.send()
+//            print("\(problemType)  after")
+//
 //        }
 //    }
 
@@ -43,7 +46,7 @@ class MathModel: ObservableObject {
         } else if problemType == "Multiplication" {
             number1 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
              number2 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
-             number3 = number1 + number2
+             number3 = number1 * number2
         } else if problemType == "Division" {
             number1 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
             number2 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
