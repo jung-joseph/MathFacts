@@ -51,7 +51,12 @@ class MathModel: ObservableObject {
             number1 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
             number2 = Int.random(in: Int(userSettings.addMinNumber)...Int(userSettings.addMaxNumber + 1))
             number3 = number1 * number2
-            
+            // number3 = quotient
+            //number2 = divisor
+            if number2 == 0 {
+                number2 = 1
+                number3 = number1 * number2
+            }
             let temp = number3
             number3 = number1
             number1 = temp
@@ -92,6 +97,7 @@ class MathModel: ObservableObject {
         //number2 = divisor
         if number2 == 0 {
             number2 = 1
+            number3 = number1 * number2
         }
         let temp = number3
         number3 = number1
