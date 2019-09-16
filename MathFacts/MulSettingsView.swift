@@ -42,8 +42,8 @@ struct MulSettingsView: View {
     }
 }
 
-//struct MulSettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MulSettingsView()
-//    }
-//}
+struct MulSettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        MulSettingsView(userSettings: UserSettings(), min: 0, max: 0)
+    }
+}

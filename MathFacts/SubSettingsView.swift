@@ -42,8 +42,8 @@ struct SubSettingsView: View {
     }
 }
 
-//struct SubSettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SubSettingsView()
-//    }
-//}
+struct SubSettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SubSettingsView(userSettings: UserSettings(), min: 0, max: 0)
+    }
+}

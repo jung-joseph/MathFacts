@@ -43,8 +43,8 @@ struct DivSettingsView: View {
     }
 }
 
-//struct DivSettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DivSettingsView()
-//    }
-//}
+struct DivSettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        DivSettingsView(userSettings: UserSettings(), min: 0, max: 0)
+    }
+}

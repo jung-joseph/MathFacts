@@ -11,13 +11,21 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var userSettings = UserSettings()
     @ObservedObject var mathModel = MathModel()
-//    mathModel = MathModel(userSettings: userSettings)
-
+    
     @State private var rightWrong: String = ""
     @State private var answerDisplay: String = "??"
-    @State private var score: Int = 0
+    
+    @State private var addScore: Int = 0
+    @State private var subScore: Int = 0
+    @State private var mulScore: Int = 0
+    @State private var divScore: Int = 0
+    
+    @State private var numAddProblems: Int = 0
+    @State private var numSubProblems: Int = 0
+    @State private var numMulProblems: Int = 0
+    @State private var numDivProblems: Int = 0
+    
     @State private var newProblem: Bool = true
-    @State private var numProblems: Int = 1
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
@@ -26,7 +34,7 @@ struct ContentView: View {
     
     var body: some View {
         
-
+        
         NavigationView{
             ZStack{
                 //Define the screen Color
@@ -35,81 +43,17 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack{
-                    HStack{
-                        Button (action: {
-                            self.mathModel.problemType = "Addition"
-                            self.mathModel.initialize(userSettings: self.userSettings)
-                            self.answerDisplay = "??"
-                            self.mathModel.answerText = ""
-
-                        }){Text("Addition")}
-                            .background(Color.red)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 10)
-                            .font(.custom("Arial", size: 20))
-                        Button (action: {
-                            self.mathModel.problemType = "Subtraction"
-                            self.mathModel.initialize(userSettings: self.userSettings)
-                            self.answerDisplay = "??"
-                            self.mathModel.answerText = ""
-
-
-                        }){Text("Subtraction")}
-                            .background(Color.red)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 10)
-                            .font(.custom("Arial", size: 20))
-                        Button (action: {
-                            self.mathModel.problemType = "Multiplication"
-                            self.mathModel.initialize(userSettings: self.userSettings)
-                            self.answerDisplay = "??"
-                            self.mathModel.answerText = ""
-
-
-                        }){Text("Multiplication")}
-                            .background(Color.red)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 10)
-                            .font(.custom("Arial", size: 20))
-                        Button (action: {
-                            self.mathModel.problemType = "Division"
-                            self.mathModel.initialize(userSettings: self.userSettings)
-                            self.answerDisplay = "??"
-                            self.mathModel.answerText = ""
-
-
-                        }){Text("Division")}
-                            .background(Color.red)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 10)
-                            .font(.custom("Arial", size: 20))
-                        
-                    }
-
                     
+                    ProblemButtonsScores(userSettings: userSettings, mathModel: mathModel, answerDisplay: $answerDisplay, addScore: $addScore, subScore: $subScore, mulScore: $mulScore, divScore: $divScore, numAddProblems: $numAddProblems, numSubProblems: $numSubProblems, numMulProblems: $numMulProblems, numDivProblems: $numDivProblems)
                     
-                    HStack{
-
-                        RightWrongView(rightWrong: $rightWrong)
-                        Spacer()
-                        Text("Score: \(score) / \(numProblems)")
-                            .font(.largeTitle)
-                            .padding()
-                            .foregroundColor(Color.white)
-                    }
+                    ProblemView(mathModel: mathModel, answerDisplay: $answerDisplay,fontSize: 50)
                     
-                    ProblemView(mathModel: mathModel, answerDisplay: $answerDisplay)
-
                     
                     TextField("Answer", text: $mathModel.answerText).textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 40)).foregroundColor(Color.red)
                         .keyboardType(.numbersAndPunctuation)
                     
-                    AnswerButton(mathModel: mathModel, answerDisplay: $answerDisplay, rightWrong: $rightWrong, newProblem: $newProblem, score: $score)
-
+                    AnswerButton(mathModel: mathModel, answerDisplay: $answerDisplay, rightWrong: $rightWrong, newProblem: $newProblem, addScore: $addScore, subScore: $subScore, mulScore: $mulScore, divScore: $divScore, numAddProblems: $numAddProblems, numSubProblems: $numSubProblems, numMulProblems: $numMulProblems, numDivProblems: $numDivProblems)
+                    
                     
                     Text("Double Tap Anywhere For the Next Problem")
                         .font(.body)
@@ -122,10 +66,10 @@ struct ContentView: View {
                     
                     
                 }// VStack
-
+                
             } // ZStack
                 .navigationBarItems(trailing: SettingsButton(destination: UserSettingsView(userSettings: userSettings))).foregroundColor(Color.white)
-
+                
                 .navigationBarTitle("MathFacts!")
             
         }// NavigationView
@@ -142,28 +86,27 @@ struct ContentView: View {
                 } else {
                     fatalError("Fatal Error")
                 }
-        
+                
                 self.answerDisplay = "??"
                 self.mathModel.answerText = ""
                 self.newProblem = true
-                self.numProblems += 1
                 self.rightWrong = ""
         }
         
         
     }
 }// ContentView
-
-struct SettingsButton<Destination : View>: View {
-    var destination: Destination
     
-    var body: some View {
-        NavigationLink(destination: self.destination){Text("⚙︎").font(.largeTitle)}
+    struct SettingsButton<Destination : View>: View {
+        var destination: Destination
+        
+        var body: some View {
+            NavigationLink(destination: self.destination){Text("⚙︎").font(.largeTitle)}
+        }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
 }

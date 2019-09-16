@@ -15,6 +15,7 @@
 		53227D8C232AB9510057E162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53227D8A232AB9510057E162 /* LaunchScreen.storyboard */; };
 		53227D94232AB9A40057E162 /* ProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53227D93232AB9A40057E162 /* ProblemView.swift */; };
 		53227D96232AB9D90057E162 /* MathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53227D95232AB9D90057E162 /* MathModel.swift */; };
+		5333E3E3232FC2D800EC80EA /* ProblemButtonsScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333E3E2232FC2D800EC80EA /* ProblemButtonsScores.swift */; };
 		533735B7232C1DFD005BBE25 /* RightWrongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533735B6232C1DFD005BBE25 /* RightWrongView.swift */; };
 		533735B9232C1FD4005BBE25 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533735B8232C1FD4005BBE25 /* AnswerButton.swift */; };
 		53B999A8232E7629005899AC /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B999A7232E7629005899AC /* UserSettingsView.swift */; };
@@ -36,6 +37,7 @@
 		53227D8D232AB9510057E162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53227D93232AB9A40057E162 /* ProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemView.swift; sourceTree = "<group>"; };
 		53227D95232AB9D90057E162 /* MathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathModel.swift; sourceTree = "<group>"; };
+		5333E3E2232FC2D800EC80EA /* ProblemButtonsScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemButtonsScores.swift; sourceTree = "<group>"; };
 		533735B6232C1DFD005BBE25 /* RightWrongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightWrongView.swift; sourceTree = "<group>"; };
 		533735B8232C1FD4005BBE25 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		53B999A7232E7629005899AC /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
@@ -84,15 +86,16 @@
 				533735B6232C1DFD005BBE25 /* RightWrongView.swift */,
 				53B999A7232E7629005899AC /* UserSettingsView.swift */,
 				53B999A9232E7674005899AC /* UserSettings.swift */,
+				5333E3E2232FC2D800EC80EA /* ProblemButtonsScores.swift */,
 				533735B8232C1FD4005BBE25 /* AnswerButton.swift */,
-				53227D85232AB9510057E162 /* Assets.xcassets */,
-				53227D8A232AB9510057E162 /* LaunchScreen.storyboard */,
-				53227D8D232AB9510057E162 /* Info.plist */,
-				53227D87232AB9510057E162 /* Preview Content */,
 				53B999AD232EF9AE005899AC /* AddSettingsView.swift */,
 				53B999AF232EFC05005899AC /* SubSettingsView.swift */,
 				53B999B1232EFCA1005899AC /* MulSettingsView.swift */,
 				53B999B3232EFD39005899AC /* DivSettingsView.swift */,
+				53227D85232AB9510057E162 /* Assets.xcassets */,
+				53227D8A232AB9510057E162 /* LaunchScreen.storyboard */,
+				53227D8D232AB9510057E162 /* Info.plist */,
+				53227D87232AB9510057E162 /* Preview Content */,
 			);
 			path = MathFacts;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				53227D96232AB9D90057E162 /* MathModel.swift in Sources */,
 				533735B9232C1FD4005BBE25 /* AnswerButton.swift in Sources */,
 				53227D82232AB94F0057E162 /* SceneDelegate.swift in Sources */,
+				5333E3E3232FC2D800EC80EA /* ProblemButtonsScores.swift in Sources */,
 				53227D84232AB94F0057E162 /* ContentView.swift in Sources */,
 				53B999B4232EFD39005899AC /* DivSettingsView.swift in Sources */,
 				53B999B0232EFC05005899AC /* SubSettingsView.swift in Sources */,

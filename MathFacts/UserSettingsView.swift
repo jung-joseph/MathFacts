@@ -11,8 +11,7 @@ import SwiftUI
 struct UserSettingsView: View {
     
     @ObservedObject var userSettings: UserSettings
-//    @State private var minNumber: Double
-//    @State private var addMaxNumber: Double
+
     
     var min: Double = -50
     var max: Double = 50
@@ -35,14 +34,15 @@ struct UserSettingsView: View {
 
             }
 //        .navigationBarTitle(Text("User Settings"))
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.bottom)
+            
         }
     }
 }
-//#if DEBUG
-//struct UserSettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserSettingsView(userSettings: UserSettings())
-//    }
-//}
-//#endif
+#if DEBUG
+struct UserSettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserSettingsView(userSettings: UserSettings())
+    }
+}
+#endif
