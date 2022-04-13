@@ -28,7 +28,7 @@ struct ContentView: View {
     @State private var newProblem: Bool = true
     
     init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         mathModel.initialize(userSettings: userSettings)
     }
     
@@ -38,7 +38,7 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 //Define the screen Color
-                Color.blue
+                Color.black
                     // Extend the screen to all edges
                     .edgesIgnoringSafeArea(.all)
                 

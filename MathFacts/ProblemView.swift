@@ -35,7 +35,7 @@ struct ProblemView: View {
  
             Text("\(answerDisplay)").font(.custom("Arial", size: fontSize)).foregroundColor(Color.red)
             
-        }.background(Color.blue).padding().cornerRadius(20).shadow(radius: 20)
+        }.background(Color.black).padding().cornerRadius(20).shadow(radius: 20)
     }
 }
 
